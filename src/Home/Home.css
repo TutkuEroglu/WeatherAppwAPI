@@ -1,0 +1,155 @@
+.Home {
+    width: 100vw;
+    height: 100vh;
+}
+
+.bgImage {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    opacity: 1;
+    position: fixed;
+    z-index: -1;
+    object-fit: fill;
+}
+
+.Header {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row-reverse;
+}
+
+.searchIcon {
+    background-color: rgba(255, 255, 255, 0.199);
+    color: white;
+    border-top-left-radius: 9999px;
+    border-bottom-left-radius: 9999px;
+    border: 1px solid white;
+    border-right: none;
+    height: 50px;
+    width: 50px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+  }
+  
+  .searchInput {
+    background-color: rgba(255, 255, 255, 0.199);
+    height: 50px;
+    width: 250px;
+    padding: 0 5px;
+    font-size: 18px;
+    border: 1px solid white;
+    border-left: none;
+    box-sizing: border-box;
+    border-top-right-radius: 9999px;
+    border-bottom-right-radius: 9999px;
+  }
+  
+  .searchInput::placeholder {
+    color: white;
+  }
+  
+  
+  .searchInput:focus {
+    box-shadow: none;
+    outline: none;
+    color: white;
+    font-size: 20px;
+  } 
+  
+  .searchInput:focus::placeholder {
+    visibility: hidden;
+  }
+
+  .Container {
+    height: 735px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .Location {
+    color: white;
+    display: flex;
+    height: 200px;
+    align-items: center;
+    justify-content: center;
+    font-size:70px;
+    font-weight: 600;
+  }
+
+  .Temp {
+    display: flex;
+    height: 200px;
+    align-items: center;
+    justify-content: space-around;
+    font-size:100px;
+    font-weight: 800;
+  }
+
+  .sunny {
+    color: yellow;
+  }
+
+  .Description {
+    position: relative;
+    right: -96%;
+    height: 35px;
+    padding: 0 50px;
+    box-sizing: border-box;
+    transform-origin: 0 0;
+    transform: rotate(270deg);
+    font-size: 50px;
+    display: flex;
+    align-items: center;
+    font-weight: 800;
+  }
+
+  .Footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+    height: 100px;
+  }
+
+  .FooterContain {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgba(255, 255, 255, 0.199);
+    width: 750px;
+    margin-bottom: 75px;
+    border-radius: 10px;
+    box-shadow: 5px 5px rgba(0, 0, 0, 0.151);
+  }
+
+  .Feels,
+  .Humidity,
+  .Wind 
+   {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .FeelsHeader,
+  .HumidityHeader,
+  .WindHeader {
+    font-size: 26px;
+    font-weight: 800;
+    line-height: 0.5;
+  }
+
+  .FeelsBottom,
+  .HumidityBottom,
+  .WindBottom {
+    font-size: 18px;
+    line-height: 0.5;
+  }
