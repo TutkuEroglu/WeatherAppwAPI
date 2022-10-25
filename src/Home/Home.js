@@ -13,7 +13,7 @@ const Home = () => {
     locationIcon: "//cdn.weatherapi.com/weather/64x64/day/113.png",
     locationText: "Sunny",
     locationFeels: "36 °C",
-    locationHumidity: "15",
+    locationHumidity: "15%",
     locationWind: "8.4 MPH",
   };
 
@@ -39,6 +39,7 @@ const Home = () => {
             setForecast(response?.data?.forecast?.forecastday[0]);
             setInfo(response?.data?.location);
             setLocation("")
+            console.log(response.data)
           })
           .catch(function (error) {
             console.error(error);
@@ -96,7 +97,7 @@ const Home = () => {
             <div className="Feels">
               <p className="FeelsHeader">
                 {forecast?.day?.avgtemp_c
-                  ? forecast?.day?.avgtemp_c
+                  ? forecast?.day?.avgtemp_c + " °C"
                   : initialState.locationFeels}
               </p>
               <p className="FeelsBottom">Feels Like</p>
@@ -104,7 +105,7 @@ const Home = () => {
             <div className="Humidity">
               <p className="HumidityHeader">
                 {forecast?.day?.avghumidity
-                  ? forecast?.day?.avghumidity
+                  ? forecast?.day?.avghumidity + "%"
                   : initialState.locationHumidity}
               </p>
               <p className="HumidityBottom">Humidity</p>
