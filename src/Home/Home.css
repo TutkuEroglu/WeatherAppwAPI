@@ -1,3 +1,15 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300ita‌​lic,400italic,500,500italic,700,700italic,900italic,900);
+
+html, body, html * {
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
 .Home {
     width: 100vw;
     height: 100vh;
@@ -10,7 +22,8 @@
     opacity: 1;
     position: fixed;
     z-index: -1;
-    object-fit: fill;
+    object-fit: cover;
+    max-height: 100vh;
 }
 
 .Header {
@@ -67,7 +80,8 @@
   }
 
   .Container {
-    height: 735px;
+    height: 100%;
+    max-height: 737px;
     color: white;
     display: flex;
     flex-direction: column;
@@ -79,7 +93,7 @@
     height: 200px;
     align-items: center;
     justify-content: center;
-    font-size:70px;
+    font-size:60px;
     font-weight: 600;
   }
 
@@ -87,28 +101,22 @@
     display: flex;
     height: 200px;
     align-items: center;
-    justify-content: space-around;
-    font-size:90px;
+    justify-content: center;
+    font-size:60px;
     font-weight: 800;
   }
 
   .condition {
     color: yellow;
-    height: 100px;
-    width: 100px;
+    height: 80px;
+    width: 80px;
   }
 
   .Description {
-    position: relative;
-    right: -96%;
-    height: 35px;
-    padding: 0 50px;
-    box-sizing: border-box;
-    transform-origin: 0 0;
-    transform: rotate(270deg);
     font-size: 50px;
     display: flex;
     align-items: center;
+    justify-content: center;
     font-weight: 800;
   }
 
@@ -124,7 +132,7 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background-color: rgba(255, 255, 255, 0.199);
+    background-color: rgba(0, 0, 0, 0.493);
     width: 750px;
     margin-bottom: 75px;
     border-radius: 10px;
@@ -144,7 +152,7 @@
   .FeelsHeader,
   .HumidityHeader,
   .WindHeader {
-    font-size: 26px;
+    font-size: 20px;
     font-weight: 800;
     line-height: 0.5;
   }
@@ -152,6 +160,61 @@
   .FeelsBottom,
   .HumidityBottom,
   .WindBottom {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 0.5;
+  }
+
+  @media only screen and (max-width: 460px) {
+    .Container {
+      max-height: 644px;
+    }
+    .bgImage {
+      max-height: 1450px;
+    }
+    .Location {
+      font-size: 40px;
+      height: 50px;
+    }
+    .Temp {
+      font-size: 36px;
+      margin-right: 50px;
+    }
+    .Description {
+      font-size: 32px;
+    }
+    .Footer {
+      padding: 0 10px;
+      box-sizing: border-box;
+    }
+  }
+
+  @media only screen and (max-width: 376px) {
+    .Container {
+      max-height: 420px;
+    }
+    .bgImage {
+      max-height: 950px;
+      min-height: 300px;
+    }
+    .Location {
+      font-size: 40px;
+      height: 50px;
+    }
+    .Temp {
+      font-size: 36px;
+      height: 150px;
+      margin-right: 50px;
+    }
+    .Description {
+      font-size: 32px;
+      height: 50px;
+      padding: 0 20px;
+      box-sizing: border-box;
+      text-align: center;
+
+    }
+    .Footer {
+      padding: 0 10px;
+      box-sizing: border-box;
+    }
   }

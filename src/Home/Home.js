@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Home.css";
 import axios from "axios";
-import Background from "../Assets/bg.jpg";
+import Background from "../Assets/bgg.jpg";
 
 const Home = () => {
   const [location, setLocation] = useState("");
@@ -18,47 +18,39 @@ const Home = () => {
   };
 
   const searchLocation = async (e) => {
+    e.preventDefault();
     const today = new Date();
     try {
-      if (e.key === "Enter") {
-        e.preventDefault();
-        const options = {
-          method: "GET",
-          url: "https://weatherapi-com.p.rapidapi.com/history.json",
-          params: { q: `${location}`, dt: today, lang: "en" },
-          headers: {
-            "X-RapidAPI-Key":
-              "13a3d1c5a5mshaeff5a105d97999p16a63bjsnd83ec29df07e",
-            "X-RapidAPI-Host": "weatherapi-com.p.rapidapi.com",
-          },
-        };
-
-        await axios
-          .request(options)
-          .then(function (response) {
-            setForecast(response?.data?.forecast?.forecastday[0]);
-            setInfo(response?.data?.location);
-            setLocation("")
-            console.log(response.data)
-          })
-          .catch(function (error) {
-            console.error(error);
-          });
-      }
+      const options = {
+        method: "GET",
+        url: "https://weatherapi-com.p.rapidapi.com/history.json",
+        params: { q: `${location}`, dt: today, lang: "en" },
+        headers: {
+          "X-RapidAPI-Key":
+            "13a3d1c5a5mshaeff5a105d97999p16a63bjsnd83ec29df07e",
+          "X-RapidAPI-Host": "weatherapi-com.p.rapidapi.com",
+        },
+      };
+      await axios.request(options).then(function (response) {
+        setForecast(response?.data?.forecast?.forecastday[0]);
+        setInfo(response?.data?.location);
+        setLocation("");
+        console.log(response.data);
+      });
     } catch (err) {
-      console.log(err);
+      alert("Location not found")
+      setLocation("");
     }
   };
 
   return (
     <div className="Home">
-      <img src={Background} className="bgImage" alt="bg"/>
-      <form className="Header">
+      <img src={Background} className="bgImage" alt="bg" />
+      <form className="Header" onSubmit={searchLocation}>
         <input
           className="searchInput"
           placeholder="Enter Location"
           type="text"
-          onKeyDown={searchLocation}
           onChange={(e) => setLocation(e.target.value)}
           autoComplete=""
           value={location}
